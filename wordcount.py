@@ -21,5 +21,5 @@ def countWordInFile(file_path, target_word):
     return count
 
 # Call the function at the bottom to test it:
-result = countWordInFile('dummy.txt', 'the')
+result = countWordInFile('dummy.txt', 'on')
 print(f"The word appears {result} times.")

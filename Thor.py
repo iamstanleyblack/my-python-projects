@@ -1,6 +1,6 @@
 import random
 
-NUM_DIGITS = 3
+NUM_DIGITS = 7
 MAX_GUESSES = 10
 
 def main():
