@@ -19,22 +19,30 @@ class Restaurant:
     def increment_number_served(self, increase):
         self.number_served += increase
 
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavours = ['vanilla', 'strawberry', 'blueberry', 'mint', 'pineapple']
+    def display_flavours(self):
+        for i in range(len(self.flavours)):
+            print(f"Flavour {i+1}: {self.flavours[i].title()}")
 
-restaurant = Restaurant("Hyatt Regency", "Italian")
-restaurant.set_number_served(15)
-restaurant.increment_number_served(12)
-restaurant.increment_number_served(19)
-restaurant.increment_number_served(10)
-restaurant.increment_number_served(21)
-restaurant.increment_number_served(10)
-restaurant.increment_number_served(37)
-restaurant.increment_number_served(38)
+restaurant = IceCreamStand("Hyatt Regency", "Italian")
+restaurant.display_flavours()
+# restaurant.set_number_served(15)
+# restaurant.increment_number_served(12)
+# restaurant.increment_number_served(19)
+# restaurant.increment_number_served(10)
+# restaurant.increment_number_served(21)
+# restaurant.increment_number_served(10)
+# restaurant.increment_number_served(37)
+# restaurant.increment_number_served(38)
 
-print("So far we have served " + str(restaurant.number_served) + " customers.")
+# print("So far we have served " + str(restaurant.number_served) + " customers.")
 
-print(restaurant.restaurant_name)
-print(restaurant.cuisine_type)
-restaurant.describe_restaurant()
+# print(restaurant.restaurant_name)
+# print(restaurant.cuisine_type)
+# restaurant.describe_restaurant()
 # restaurant1.describe_restaurant()
 # restaurant2.describe_restaurant()
 # restaurant3.describe_restaurant()

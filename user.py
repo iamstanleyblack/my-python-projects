@@ -21,15 +21,39 @@ class User:
         print("You have logged in " + str(self.login_attempts) + " times.")
 
 
-joe = User("Atieno", "Achieng", 2241, 'F', 'A', "fully paid")
-joe.increment_login_attempts()
-joe.increment_login_attempts()
-joe.increment_login_attempts()
-joe.increment_login_attempts()
-joe.increment_login_attempts()
-joe.increment_login_attempts()
+class Admin(User):
+        def __init__(self, first_name, last_name, reg_no, gender, grade, fees_paid):
 
-joe.reset_login_attempts()
+             super().__init__(first_name, last_name, reg_no, gender, grade, fees_paid)
+
+             self.privileges = ["can add post", "can delete", "can ban user", "can edit posts", "can suspend user"]
+
+        # def show_privileges(self):
+        #      for i in range(len(self.privileges)):
+        #         print(f"Privilege {i+1}: {self.privileges[i].title()}")
+
+class Privileges(Admin):
+     def __init__(self, first_name, last_name, reg_no, gender, grade, fees_paid):
+          super().__init__(first_name, last_name, reg_no, gender, grade, fees_paid)
+    
+
+     def show_privileges(self):
+        for i in range(len(self.privileges)):
+            print(f"Privilege {i+1}: {self.privileges[i].title()}")
+
+          
+
+
+joe = Privileges("Atieno", "Achieng", 2241, 'F', 'A', "fully paid")
+joe.show_privileges()
+# joe.increment_login_attempts()
+# joe.increment_login_attempts()
+# joe.increment_login_attempts()
+# joe.increment_login_attempts()
+# joe.increment_login_attempts()
+# joe.increment_login_attempts()
+
+# joe.reset_login_attempts()
 # joe.increment_login_attempts()
 
 # print("You have logged in " + str(joe.login_attempts()) + " times.")

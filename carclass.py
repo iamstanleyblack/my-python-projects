@@ -28,7 +28,7 @@ class Car:
     def increment_odometer_reading(self, miles):
         self.odometer_reading += miles    
         print("Your car now has an odometer reading of " + str(self.odometer_reading) + ". Watch out.")
-
+"""
     
 my_new_car = Car('audi', 'a4', 2018)
 
@@ -39,3 +39,41 @@ my_new_car.increment_odometer_reading(50)
 my_new_car.increment_odometer_reading(100)
 
 # my_new_car.read_odometer()
+"""
+class Battery():
+    """A simple attempt to model a battery for an electric car."""
+    def __init__(self, battery_size=85):
+        """Initializing the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print("This car has a " + str(self.battery_size) + "-KWh battery.")
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        """
+        Initializing attributes of the parent class.
+        Then initializing attributes specific to an electric car.
+#         """
+        super().__init__(make, model, year)
+        self.battery_size = Battery()
+"""
+    def fill_gas_tank():
+        print("This car doesn't need a gas tank!")
+
+    def describe_battery(self):
+        print("This car has a " + str(self.battery_size) + "-KWh battery.")
+"""
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+# print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+
+
+
+"""
+
+print(my_tesla.read_odometer())
+print(my_tesla.update_odometer_reading(53))
+print(my_tesla.increment_odometer_reading(64))
+"""
